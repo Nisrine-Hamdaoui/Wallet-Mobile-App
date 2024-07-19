@@ -1,0 +1,17 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9090/realms/Wallet-App
+          jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
+server:
+  port: 8080
+
+
+jwt:
+  auth:
+    converter:
+      resource-id: Wallet-App
+      principle-attribute: preferred_username
+
