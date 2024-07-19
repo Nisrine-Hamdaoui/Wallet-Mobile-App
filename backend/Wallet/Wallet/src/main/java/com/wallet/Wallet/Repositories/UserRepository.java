@@ -10,6 +10,7 @@ import com.wallet.Wallet.Entities.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
+    
     Optional<User> findByPhoneNumber(String phoneNumber);
 
     Optional<User> findByEmail(String email);
